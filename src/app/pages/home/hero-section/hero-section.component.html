@@ -1,0 +1,44 @@
+<section
+  class="flex h-[633px] relative overflow-hidden px-[100px] bg-[#F2F0F1]"
+>
+  <div class="flex-1/2 items-center my-auto">
+    <h1 class="text-[64px] leading-14 font-[900] text-balance line-hight">
+      FIND CLOTHES THAT MATCHES YOUR STYLE
+    </h1>
+    <p class="text-[16px] my-[32px] text-balance text-[#000000]/60">
+      Browse through our diverse range of meticulously crafted garments,
+      designed to bring out your individuality and cater to your sense of style.
+    </p>
+    <button-comp class="mb-[48px]" text="Shop Now"></button-comp>
+    <div class="flex items-stretch gap-[32px]">
+      @for (item of statisticsData; track $index) {
+      <div>
+        <h1 class="text-[40px] font-medium">
+          {{ item.number | dotSeparator }} +
+        </h1>
+        <p class="text-[#000000]/60">{{ item.about }}</p>
+      </div>
+      @if ($index!=statisticsData.length-1) {
+      <div class="bg-[#000000]/10 w-[1px]"></div>
+      } }
+    </div>
+  </div>
+  <img src="./images/hero-models.png" class="absolute right-0 w-full" alt="" />
+  <div class="flex-1/2 h-full relative">
+    <app-svg-icon
+      icon="star"
+      [size]="56"
+      class="absolute top-[130px]"
+    ></app-svg-icon>
+    <app-svg-icon
+      icon="star"
+      [size]="104"
+      class="absolute top-[86px]"
+    ></app-svg-icon>
+  </div>
+</section>
+<section class="bg-black h-[122px] flex justify-around items-center">
+  @for (item of [1,2,3,4,5]; track $index) {
+  <app-svg-icon [icon]="`logos/logo(${item-1})`" [size]="100"></app-svg-icon>
+  }
+</section>

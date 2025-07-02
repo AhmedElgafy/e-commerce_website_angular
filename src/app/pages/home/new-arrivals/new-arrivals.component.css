@@ -1,0 +1,6 @@
+@layer components {
+  .section-title {
+    @apply text-[64px] leading-[56px] font-[900] text-balance;
+    /* background-color: black; */
+  }
+}

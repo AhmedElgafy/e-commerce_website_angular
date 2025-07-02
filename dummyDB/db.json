@@ -1,0 +1,148 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Men's Cotton T-Shirt",
+      "description": "Soft and comfortable cotton t-shirt for men.",
+      "price": 19.99,
+      "category": "men",
+      "size": ["S", "M", "L", "XL"],
+      "color": ["black", "white", "blue"],
+      "image": "/images/mens_tshirt.jpg",
+      "stock": 50
+    },
+    {
+      "id": 2,
+      "name": "Women's Denim Jacket",
+      "description": "Trendy and durable denim jacket for women.",
+      "price": 49.99,
+      "category": "women",
+      "size": ["S", "M", "L"],
+      "color": ["blue", "black"],
+      "image": "/images/womens_jacket.jpg",
+      "stock": 30
+    },
+    {
+      "id": 3,
+      "name": "Unisex Hoodie",
+      "description": "Warm unisex hoodie with front pocket.",
+      "price": 39.99,
+      "category": "unisex",
+      "size": ["S", "M", "L", "XL", "XXL"],
+      "color": ["grey", "black", "green"],
+      "image": "/images/products/product(1).jpg",
+      "stock": 60
+    }
+  ],
+  "newArrivals": [
+    {
+      "id": 1,
+      "name": "Men's Cotton T-Shirt",
+      "description": "Soft and comfortable cotton t-shirt for men.",
+      "price": 19.99,
+      "category": "men",
+      "size": ["S", "M", "L", "XL"],
+      "color": ["black", "white", "blue"],
+      "image": "/images/products/product(2).jpg",
+      "stock": 50
+    },
+    {
+      "id": 2,
+      "name": "Women's Denim Jacket",
+      "description": "Trendy and durable denim jacket for women.",
+      "price": 49.99,
+      "category": "women",
+      "size": ["S", "M", "L"],
+      "color": ["blue", "black"],
+      "image": "/images/products/product(3).jpg",
+      "stock": 30
+    },
+    {
+      "id": 3,
+      "name": "Unisex Hoodie",
+      "description": "Warm unisex hoodie with front pocket.",
+      "price": 39.99,
+      "category": "unisex",
+      "size": ["S", "M", "L", "XL", "XXL"],
+      "color": ["grey", "black", "green"],
+      "image": "/images/products/product(4).jpg",
+      "stock": 60
+    },
+    {
+      "id": 4,
+      "name": "Unisex Hoodie",
+      "description": "Warm unisex hoodie with front pocket.",
+      "price": 39.99,
+      "category": "unisex",
+      "size": ["S", "M", "L", "XL", "XXL"],
+      "color": ["grey", "black", "green"],
+      "image": "/images/products/product(4).jpg",
+      "stock": 60
+    },
+    {
+      "id": 5,
+      "name": "Unisex Hoodie",
+      "description": "Warm unisex hoodie with front pocket.",
+      "price": 39.99,
+      "category": "unisex",
+      "size": ["S", "M", "L", "XL", "XXL"],
+      "color": ["grey", "black", "green"],
+      "image": "/images/products/product(5).jpg",
+      "stock": 60
+    },
+    {
+      "id": 6,
+      "name": "Unisex Hoodie",
+      "description": "Warm unisex hoodie with front pocket.",
+      "price": 39.99,
+      "category": "unisex",
+      "size": ["S", "M", "L", "XL", "XXL"],
+      "color": ["grey", "black", "green"],
+      "image": "/images/products/product(6).jpg",
+      "stock": 60
+    }
+  ],
+  "categories": [
+    { "id": "men", "name": "Men" },
+    { "id": "women", "name": "Women" },
+    { "id": "unisex", "name": "Unisex" },
+    { "id": "kids", "name": "Kids" }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "123456",
+      "address": "123 Street, Cairo, Egypt"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "password": "abcdef",
+      "address": "456 Avenue, Alexandria, Egypt"
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "userId": 1,
+      "productId": 2,
+      "quantity": 1
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "items": [
+        { "productId": 1, "quantity": 2 },
+        { "productId": 3, "quantity": 1 }
+      ],
+      "total": 79.97,
+      "status": "delivered",
+      "date": "2025-07-01"
+    }
+  ]
+}

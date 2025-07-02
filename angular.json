@@ -78,6 +78,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            "poll": 2000,
             "polyfills": [
               "zone.js",
               "zone.js/testing"
@@ -97,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "79058fd5-8195-45a2-85e1-e988f05b6e36"
   }
 }
