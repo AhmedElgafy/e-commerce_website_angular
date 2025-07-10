@@ -6,7 +6,7 @@ import { Product } from '../../typs/product';
 export class APIsService {
   private baseUrl = 'http://localhost:3000/';
   private http = inject(HttpClient);
-  getNewArrivals() {
-    return this.http.get<Product[]>(this.baseUrl + 'newArrivals');
+  getProducts<T>(url: string) {
+    return this.http.get<T>(this.baseUrl + url);
   }
 }

@@ -1,6 +1,8 @@
 import { Component, computed, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SvgIconComponent } from '../UI/svgComp.component';
+import MobileMenu from './menu.component';
+import { navItems } from './data';
 
 interface navItem {
   label: string;
@@ -14,33 +16,12 @@ interface nevItemSelect {
 }
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, SvgIconComponent],
+  imports: [RouterLink, MobileMenu, SvgIconComponent, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  navItems: (navItem | nevItemSelect)[] = [
-    {
-      label: 'Shop',
-      type: 'select',
-      options: [],
-    },
-    {
-      label: 'On Sale',
-      type: 'direct',
-      href: 'on-sale',
-    },
-    {
-      label: 'New Arrivals',
-      type: 'direct',
-      href: 'new-arrivals',
-    },
-    {
-      label: 'Brands',
-      type: 'direct',
-      href: 'brands',
-    },
-  ];
+  navItems = navItems;
   showOptions = signal(false);
   closeOptions() {
     this.showOptions.set(false);
@@ -48,6 +29,5 @@ export class HeaderComponent {
   openOptions() {
     this.showOptions.set(true);
   }
-  ngDoCheck() {
-  }
+  ngDoCheck() {}
 }

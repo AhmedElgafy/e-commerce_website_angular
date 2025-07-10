@@ -1,0 +1,22 @@
+<section
+  class="max-w-[1240px] translate-y-[50%] rounded-[20px] flex max-md:mx-[16px]  max-md:flex-col mx-auto bg-black py-[32px] md:py-[36px] px-[24px] md:px-[64px] max-md:gap-[32px]"
+>
+  <h1 [class]="['section-title', 'text-left text-white m-0 flex-1/2'] | cn">
+    STAY UPTO DATE ABOUT OUR LATEST OFFERS
+  </h1>
+  <div
+    class="md:w-[350px] gap-[12px] flex flex-col justify-between *:p-[12px_16px] *:rounded-[62px]"
+  >
+    <div class="bg-white w-full flex gap-[12px] items-center">
+      <app-svg-icon icon="email" [width]="20" [height]="15"></app-svg-icon>
+      <input
+        class="placeholder:text-[#000000]/40 w-full outline-0"
+        type="text"
+        placeholder="Enter your email address"
+      />
+    </div>
+    <button class="bg-white cursor-pointer w-full">
+      Subscribe to Newsletter
+    </button>
+  </div>
+</section>

@@ -1,1 +1,33 @@
-<p>reviews works!</p>
+<section>
+  <div class="flex justify-between my-[80px_40px]  items-end">
+    <h1 [class]="cn('section-title', 'text-left m-0')">
+      OUR HAPPY CUSTOMERS
+    </h1>
+    <div
+      class="flex gap-[10px]  justify-end  *:cursor-pointer *:rounded-[5px] *:hover:bg-black *:hover:stroke-white *:p-2"
+    >
+      <div>
+        <app-svg-icon icon="arrow" [width]="15" [height]="18"></app-svg-icon>
+      </div>
+      <div (click)="goNext()">
+        <app-svg-icon
+          class="rotate-180"
+          icon="arrow"
+          [width]="15"
+          [height]="18"
+        ></app-svg-icon>
+      </div>
+    </div>
+  </div>
+
+  <div
+    #reviewCard
+    id="reviewCard"
+    style="scrollbar-width: none"
+    class="flex max-w-[100%] overflow-scroll overflow-y-hidden gap-[20px]"
+  >
+    @for (review of reviews; track $index) {
+    <app-review-card [id]="'review'" [review]="review"></app-review-card>
+    }
+  </div>
+</section>

@@ -1,17 +1,22 @@
 <section
-  class="flex gap-[40px] mb-[24px] max-w-[1240px] mx-auto mt-[21px] justify-between items-center"
+  class="flex gap-[40px] mb-[24px] max-w-[1240px] max-md:px-[16px] max-md:justify-between mx-auto mt-[21px] justify-between items-center"
 >
-  <h1 class="font-[1000] text-[32px]">SHOP.CO</h1>
-  <div class="flex gap-[24px] w-full items-center text-[16px] font-normal">
+  <div class="flex items-center gap-[16px] leading-none">
+    <app-svg-icon icon="menu" fill="black" [size]="24" class="md:hidden" />
+    <h1 class="font-[1000] text-[32px] cursor-pointer" routerLink="/">
+      SHOP.CO
+    </h1>
+  </div>
+  <div class="flex gap-[24px] md:w-full items-center text-[16px] font-normal">
     @for (item of navItems; track $index) { @if ( item.type=="direct" ) {
-    <div class="flex align-items-center">
+    <div class="flex align-items-center max-md:hidden">
       <a [routerLink]="item.href" class="text-nowrap">{{ item.label }}</a>
     </div>
     }@else {
     <div
       (mouseover)="openOptions()"
       (mouseout)="closeOptions()"
-      class="flex items-center gap-[4px]"
+      class="flex items-center gap-[4px] max-md:hidden"
     >
       <p>{{ item.label }}</p>
       <app-svg-icon icon="dropDownArrow" fill="black" [size]="13" />
@@ -21,16 +26,18 @@
     </div>
     } }
     <div
-      class="w-full h-[48px] bg-[#F0F0F0] flex items-center rounded-[62px] px-[17px]"
+      class="w-full h-[48px] bg-[#F0F0F0] max-md:hidden flex items-center rounded-[62px] px-[17px]"
     >
-      <app-svg-icon icon="search" fill="black" [size]="24" />
+      <app-svg-icon icon="search" class="fill-black/50" [size]="24" />
       <input
         type="text"
         class="ml-[12px] outline-0 w-full placeholder:text-[#000000]/40 placeholder:text-[16px]"
         placeholder="Search for products..."
       />
     </div>
+    <app-svg-icon icon="search" class="fill-black md:hidden"  [size]="24" />
     <app-svg-icon icon="cart" fill="black" [size]="24" />
     <app-svg-icon icon="profile" fill="black" [size]="20" />
   </div>
 </section>
+<app-mobile-menu/>

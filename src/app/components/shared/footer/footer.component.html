@@ -1,1 +1,61 @@
-<p>footer works!</p>
+<app-subscribe></app-subscribe>
+<section class="bg-[#F0F0F0] px-[17px] md:px-[100px] py-[180px_88px]">
+  <div
+    class="grid grid-cols-2 md:grid-cols-5 max-md:gap-y-[25px] md:gap-[100px]"
+  >
+    <div class="max-md:col-span-2">
+      <h1 class="text-[33.45px] leading-none font-extrabold mb-[25px]">
+        SHOP.CO
+      </h1>
+      <p class="text-black/60 text-pretty font-[14px] mb-[35px]">
+        We have clothes that suits your style and which you’re proud to wear.
+        From women to men.
+      </p>
+      <div class="flex gap-[12px]">
+        @for (item of socialMedia; track $index) {
+        <div
+          class="size-[28px] bg-white rounded-full group hover:bg-black cursor-pointer flex items-center justify-center"
+        >
+          <app-svg-icon
+            [routerLink]="item.href"
+            [size]="14"
+            fill="black"
+            class="fill-black group-hover:fill-white text-white"
+            [icon]="item.title"
+          />
+        </div>
+        }
+      </div>
+    </div>
+    @for (footerItem of footerItems; track $index) {
+    <div>
+      <h1 class="uppercase font-semibold mb-[26px]">{{ footerItem.title }}</h1>
+      <div class="space-y-[19px]">
+        @for (link of footerItem.links; track $index) {
+        <p [routerLink]="link.href" class="text-black/60">{{ link.title }}</p>
+        }
+      </div>
+    </div>
+    }
+  </div>
+  <div class="w-full h-[1px] my-[50px_25px] bg-black/10"></div>
+  <div class="flex justify-between max-md:flex-col max-md:gap-[16px] items-center">
+    <p class="text-black/60 text-pretty font-[14px]">
+      Shop.co © 2000-2023, All Rights Reserved
+    </p>
+    <div class="flex gap-[12px]">
+      @for (item of paymentMethods; track $index) {
+      <div
+        [routerLink]="item.href"
+        class="w-[46px] bg-white flex items-center justify-center rounded-[5.38px] h-[30px]"
+      >
+        <img
+          class="block"
+          [src]="'/assets/paymentMethods/' + item.title + '.png'"
+          [alt]="item.title"
+        />
+      </div>
+      }
+    </div>
+  </div>
+</section>

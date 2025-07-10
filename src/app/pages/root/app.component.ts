@@ -2,8 +2,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../../components/shared/header/header.component';
 import { FooterComponent } from '../../components/shared/footer/footer.component';
-import { HeroSectionComponent } from './hero-section/hero-section.component';
-import { NewArrivalsComponent } from './new-arrivals/new-arrivals.component';
+import { HeroSectionComponent } from '../home/hero-section/hero-section.component';
+import { NewArrivalsComponent } from '../home/new-arrivals/new-arrivals.component';
+import { TopSellingComponent } from '../home/top-selling/top-selling.component';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,9 @@ import { NewArrivalsComponent } from './new-arrivals/new-arrivals.component';
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    HeroSectionComponent,
-    NewArrivalsComponent,
+    // HeroSectionComponent,
+    // NewArrivalsComponent,
+    // TopSellingComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

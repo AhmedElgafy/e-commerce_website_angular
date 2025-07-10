@@ -8,4 +8,5 @@ export interface Product {
   color: string[];
   image: string;
   stock: number;
+  rate: number;
 }

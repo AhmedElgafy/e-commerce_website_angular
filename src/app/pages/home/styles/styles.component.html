@@ -1,1 +1,22 @@
-<p>styles works!</p>
+<section
+  class="max-w-[1298px] bg-[#F0F0F0] rounded-[40px] mx-auto p-[70px_60px]"
+>
+  <h1 [class]="cn('section-title', 'mt-0')">BROWSE BY DRESS STYLE</h1>
+  <div class="flex flex-wrap gap-[20px] justify-center">
+    @for (item of categories; track $index) {
+    <div class="relative max-h-[289px] overflow-hidden rounded-[20px]">
+      <h1
+        class="text-[clamp(24px,5vw,36px)] top-[25px] left-[36px] absolute capitalize font-semibold"
+      >
+        {{ item.title }}
+      </h1>
+      <img
+        class="rounded-2xl"
+        [style]="'width: ' + item.width + 'px ;'"
+        [src]="'/images/categories/' + item.image + '.png'"
+        alt=""
+      />
+    </div>
+    }
+  </div>
+</section>

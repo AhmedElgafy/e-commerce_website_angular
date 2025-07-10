@@ -8,7 +8,7 @@
       "category": "men",
       "size": ["S", "M", "L", "XL"],
       "color": ["black", "white", "blue"],
-      "image": "/images/mens_tshirt.jpg",
+      "image": "/images/mens_tshirt.png",
       "stock": 50
     },
     {
@@ -19,7 +19,7 @@
       "category": "women",
       "size": ["S", "M", "L"],
       "color": ["blue", "black"],
-      "image": "/images/womens_jacket.jpg",
+      "image": "/images/womens_jacket.png",
       "stock": 30
     },
     {
@@ -30,7 +30,7 @@
       "category": "unisex",
       "size": ["S", "M", "L", "XL", "XXL"],
       "color": ["grey", "black", "green"],
-      "image": "/images/products/product(1).jpg",
+      "image": "/images/products/product(1).png",
       "stock": 60
     }
   ],
@@ -43,8 +43,9 @@
       "category": "men",
       "size": ["S", "M", "L", "XL"],
       "color": ["black", "white", "blue"],
-      "image": "/images/products/product(2).jpg",
-      "stock": 50
+      "image": "/images/products/product(2).png",
+      "stock": 50,
+      "rate": 4
     },
     {
       "id": 2,
@@ -54,8 +55,9 @@
       "category": "women",
       "size": ["S", "M", "L"],
       "color": ["blue", "black"],
-      "image": "/images/products/product(3).jpg",
-      "stock": 30
+      "image": "/images/products/product(3).png",
+      "stock": 30,
+      "rate": 4
     },
     {
       "id": 3,
@@ -65,8 +67,9 @@
       "category": "unisex",
       "size": ["S", "M", "L", "XL", "XXL"],
       "color": ["grey", "black", "green"],
-      "image": "/images/products/product(4).jpg",
-      "stock": 60
+      "image": "/images/products/product(4).png",
+      "stock": 60,
+      "rate": 4
     },
     {
       "id": 4,
@@ -76,30 +79,59 @@
       "category": "unisex",
       "size": ["S", "M", "L", "XL", "XXL"],
       "color": ["grey", "black", "green"],
-      "image": "/images/products/product(4).jpg",
-      "stock": 60
+      "image": "/images/products/product(1).png",
+      "stock": 60,
+      "rate": 4
+    }
+  ],
+  "topSelling": [
+    {
+      "id": 1,
+      "name": "Men's Cotton T-Shirt",
+      "description": "Soft and comfortable cotton t-shirt for men.",
+      "price": 19.99,
+      "category": "men",
+      "size": ["S", "M", "L", "XL"],
+      "color": ["black", "white", "blue"],
+      "image": "/images/products/product(5).png",
+      "stock": 50,
+      "rate": 4
     },
     {
-      "id": 5,
+      "id": 2,
+      "name": "Women's Denim Jacket",
+      "description": "Trendy and durable denim jacket for women.",
+      "price": 49.99,
+      "category": "women",
+      "size": ["S", "M", "L"],
+      "color": ["blue", "black"],
+      "image": "/images/products/product(6).png",
+      "stock": 30,
+      "rate": 4
+    },
+    {
+      "id": 3,
       "name": "Unisex Hoodie",
       "description": "Warm unisex hoodie with front pocket.",
       "price": 39.99,
       "category": "unisex",
       "size": ["S", "M", "L", "XL", "XXL"],
       "color": ["grey", "black", "green"],
-      "image": "/images/products/product(5).jpg",
-      "stock": 60
+      "image": "/images/products/product(7).png",
+      "stock": 60,
+      "rate": 4
     },
     {
-      "id": 6,
+      "id": 4,
       "name": "Unisex Hoodie",
       "description": "Warm unisex hoodie with front pocket.",
       "price": 39.99,
       "category": "unisex",
       "size": ["S", "M", "L", "XL", "XXL"],
       "color": ["grey", "black", "green"],
-      "image": "/images/products/product(6).jpg",
-      "stock": 60
+      "image": "/images/products/product(1).png",
+      "stock": 60,
+      "rate": 4
     }
   ],
   "categories": [
@@ -143,6 +175,44 @@
       "total": 79.97,
       "status": "delivered",
       "date": "2025-07-01"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Sarah M.",
+      "message": "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations",
+      "rate": "4"
+    },
+    {
+      "id": 2,
+      "name": "James L.",
+      "message": "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
+      "rate": "1"
+    },
+    {
+      "id": 3,
+      "name": "James L.",
+      "message": "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
+      "rate": "3"
+    },
+    {
+      "id": 4,
+      "name": "Sarah M.",
+      "message": "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations",
+      "rate": "4"
+    },
+    {
+      "id": 5,
+      "name": "James L.",
+      "message": "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
+      "rate": "1"
+    },
+    {
+      "id": 6,
+      "name": "James L.",
+      "message": "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
+      "rate": "3"
     }
   ]
 }
