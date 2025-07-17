@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SvgIconComponent } from '../UI/svgComp.component';
 import MobileMenu from './menu.component';
@@ -29,5 +29,10 @@ export class HeaderComponent {
   openOptions() {
     this.showOptions.set(true);
   }
+  toggleMobNav() {
+    console.log('hi clicked parent');
+    this.someData.toggleNav();
+  }
+  @ViewChild(MobileMenu) someData!: MobileMenu;
   ngDoCheck() {}
 }

@@ -1,39 +1,33 @@
-import {
-  Component,
-  inject,
-  ElementRef,
-  viewChild,
-  ViewChild,
-  AfterViewInit,
-  signal,
-} from '@angular/core';
-import { cn } from '../../../uitls/functions';
-import { ClassNameValue } from 'tailwind-merge';
+import { Component, inject, OnInit, viewChild, DoCheck } from '@angular/core';
 import { APIsService } from '../../../services/apis.service';
 import ReviewI from '../../../../typs/reivew';
 import ReviewCard from './reviewCard.component';
 import { SvgIconComponent } from '../../../components/shared/UI/svgComp.component';
-import { DOCUMENT } from '@angular/common';
+import {
+  Carousel,
+  CarouselModule,
+  CarouselResponsiveOptions,
+} from 'primeng/carousel';
+import { CnPipe } from '../../../uitls/pips/cn.pipe';
+import { products } from './data';
 
 @Component({
   selector: 'app-reviews',
-  imports: [ReviewCard, SvgIconComponent],
+  imports: [ReviewCard, SvgIconComponent, CarouselModule, CnPipe],
   templateUrl: './reviews.component.html',
   styleUrl: './reviews.component.css',
 })
-export class ReviewsComponent implements AfterViewInit {
+export class ReviewsComponent implements OnInit {
   private http = inject(APIsService);
-  // saveButton = viewChild<ElementRef<HTMLElement>>('reviewCard');
-  @ViewChild('reviewCard') myDiv!: ElementRef<HTMLDivElement>;
   reviews: ReviewI[] = [];
-  doc = inject(DOCUMENT);
-  divEls = viewChild<ElementRef<HTMLElement>>('reviewCard');
-  curIndex = signal<number>(0);
-  // @ViewChildren('reviewCard') refii!: QueryList<ElementRef>;
-  ngAfterViewInit(): void {
-    // console.log(this.doc.getElementById('review-3'));
-    console.log(this.divEls()?.nativeElement.querySelector('#review-3'));
-  }
+  isBtnDisabled: { next: boolean; prev: boolean } = {
+    next: false,
+    prev: true,
+  };
+
+  carousel = viewChild<Carousel>('Carousel');
+  products: { name: string }[] = products;
+  responsiveOptions: CarouselResponsiveOptions[] | undefined;
   getReviews() {
     this.http.getProducts<ReviewI[]>('reviews').subscribe({
       next: (value) => {
@@ -44,21 +38,58 @@ export class ReviewsComponent implements AfterViewInit {
       },
     });
   }
-  cn(...inputs: ClassNameValue[]) {
-    return cn(inputs);
-  }
 
+  getButton(className: string): HTMLButtonElement | null {
+    const ele = this.carousel();
+    const button = (ele?.el.nativeElement as HTMLElement).querySelector(
+      className
+    );
+    return button as HTMLButtonElement;
+  }
   goNext() {
-    // this.doc.getElementById('review-5')?.scrollIntoView({ behavior: 'smooth' });
-    this.divEls()
-      ?.nativeElement.querySelectorAll('#review')
-      .forEach((ele) => {
-        console.log(ele.getClientRects().item(0));
-      });
-  }
+    this.getButton('.p-carousel-next-button')?.click();
 
+    this.isBtnDisabled = {
+      prev: false,
+      next:
+        this.getButton('.p-carousel-next-button')?.getAttribute(
+          'ng-reflect-disabled'
+        ) == 'true',
+    };
+  }
+  goPrev() {
+    this.getButton('.p-carousel-prev-button')?.click();
+    this.isBtnDisabled = {
+      next: false,
+      prev:
+        this.getButton('.p-carousel-prev-button')?.getAttribute(
+          'ng-reflect-disabled'
+        ) == 'true',
+    };
+  }
   ngOnInit() {
-    this.goNext();
     this.getReviews();
+    this.responsiveOptions = [
+      {
+        breakpoint: '1400px',
+        numVisible: 2,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '1199px',
+        numVisible: 3,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '767px',
+        numVisible: 2,
+        numScroll: 1,
+      },
+      {
+        breakpoint: '575px',
+        numVisible: 1,
+        numScroll: 1,
+      },
+    ];
   }
 }

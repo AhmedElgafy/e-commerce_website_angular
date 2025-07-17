@@ -7,7 +7,7 @@ import ReviewI from '../../../../typs/reivew';
   selector: 'app-review-card',
   imports: [RateStars, SvgIconComponent],
   template: ` <div
-    class="p-[28px_32px] flex flex-col justify-center gap-[10px] border-[1px] border-[#000000]/10 rounded-[20px] w-[400px] h-[240px]"
+    class="p-[28px_32px] flex flex-col  justify-center gap-[10px] border-[1px] border-[#000000]/10 rounded-[20px] w-[400px] h-[240px]"
   >
     <div>
       <rate-stars [rate]="review.rate"></rate-stars>

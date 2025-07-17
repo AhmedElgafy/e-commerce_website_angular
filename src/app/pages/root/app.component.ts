@@ -2,20 +2,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../../components/shared/header/header.component';
 import { FooterComponent } from '../../components/shared/footer/footer.component';
-import { HeroSectionComponent } from '../home/hero-section/hero-section.component';
-import { NewArrivalsComponent } from '../home/new-arrivals/new-arrivals.component';
-import { TopSellingComponent } from '../home/top-selling/top-selling.component';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    // HeroSectionComponent,
-    // NewArrivalsComponent,
-    // TopSellingComponent,
-  ],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   encapsulation: ViewEncapsulation.None,

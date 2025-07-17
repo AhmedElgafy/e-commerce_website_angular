@@ -1,0 +1,6 @@
+::ng-deep .p-carousel-next-button,
+::ng-deep .p-carousel-prev-button {
+  background-color: black !important;
+  position: absolute;
+  visibility: hidden;
+}

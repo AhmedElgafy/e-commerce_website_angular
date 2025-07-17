@@ -1,33 +1,46 @@
 <section>
-  <div class="flex justify-between my-[80px_40px]  items-end">
-    <h1 [class]="cn('section-title', 'text-left m-0')">
+  <div class="flex justify-between my-[80px_40px] items-end">
+    <h1 [class]="['section-title', 'text-left m-0'] | cn">
       OUR HAPPY CUSTOMERS
     </h1>
     <div
-      class="flex gap-[10px]  justify-end  *:cursor-pointer *:rounded-[5px] *:hover:bg-black *:hover:stroke-white *:p-2"
+      class="flex gap-[10px] justify-end *:cursor-pointer *:rounded-[5px] *:hover:bg-black *:hover:stroke-white *:p-2"
     >
-      <div>
+      <button
+        [disabled]="isBtnDisabled.prev"
+        class="disabled:opacity-50"
+        (click)="goPrev()"
+      >
         <app-svg-icon icon="arrow" [width]="15" [height]="18"></app-svg-icon>
-      </div>
-      <div (click)="goNext()">
+      </button>
+      <button
+        [disabled]="isBtnDisabled.next"
+        class="disabled:opacity-50"
+        (click)="goNext()"
+      >
         <app-svg-icon
           class="rotate-180"
           icon="arrow"
           [width]="15"
           [height]="18"
         ></app-svg-icon>
-      </div>
+      </button>
     </div>
   </div>
 
-  <div
-    #reviewCard
-    id="reviewCard"
-    style="scrollbar-width: none"
-    class="flex max-w-[100%] overflow-scroll overflow-y-hidden gap-[20px]"
+  <p-carousel
+    #Carousel
+    [value]="reviews"
+    [numVisible]="3"
+    [numScroll]="1"
+    [circular]="false"
+    [showIndicators]="false"
+    [responsiveOptions]="responsiveOptions"
   >
     @for (review of reviews; track $index) {
-    <app-review-card [id]="'review'" [review]="review"></app-review-card>
+    <ng-template let-review #item>
+      <app-review-card [id]="'review'" [review]="review"></app-review-card>
+    </ng-template>
     }
-  </div>
+  </p-carousel>
 </section>
