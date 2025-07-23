@@ -1,6 +1,6 @@
 @layer components {
   .section-title {
-    @apply leading-[56px] font-[900] text-balance text-[48px] text-center mt-[72px] mb-[55px] leading-none text-[clamp(32px,5vw,48px)];
+    @apply font-[900] text-balance  text-center mt-[72px] mb-[55px] leading-none text-[clamp(32px,5vw,48px)];
     /* background-color: black; */
   }
 }

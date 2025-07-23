@@ -1,6 +1,48 @@
-<section class="flex">
+<section class="flex max-w-[1250px] mx-auto gap-[40px]">
   <div class="flex-1/2">
     <app-product-gallery></app-product-gallery>
   </div>
-  <div class="flex-1/2"></div>
+  <div class="flex-1/2 flex flex-col">
+    <h1 class="section-title  m-0 text-left uppercase text-[40px]">
+      One Life Graphic T-shirt
+    </h1>
+    <rate-stars [rate]="4.5" />
+    <app-priceComp [discountP]="0.4" [price]="300" />
+    <p class="text-[16px] text-black/60 text-pretty">
+      This graphic t-shirt which is perfect for any occasion. Crafted from a
+      soft and breathable fabric, it offers superior comfort and style.
+    </p>
+    <p-divider class="m-0" />
+    <app-choices title="Select Colors">
+      @for (color of colors; track $index) {
+      <app-colorPickerItem
+        (selectedOption)="colorClicked(color)"
+        [option]="color"
+        [selected]="selectedColor()?.value == +color.value"
+      ></app-colorPickerItem>
+      }
+    </app-choices>
+    <p-divider class="m-0" />
+
+    <app-choices title="Choose Size">
+      @for (size of sizes; track $index) {
+      <app-size-picker
+        [option]="size"
+        (selectedOption)="sizeClicked(size)"
+        [selected]="selectedSize()?.value == size.value"
+      ></app-size-picker>
+
+      }
+    </app-choices>
+    <p-divider class="m-0" />
+    <div class="flex gap-[20px]">
+      <app-counter></app-counter>
+      <button
+        class="capitalize text-white bg-black p-[16px] rounded-[62px] w-full max-w-[400px]"
+      >
+        add to cart
+      </button>
+    </div>
+  </div>
 </section>
+<app-product-taps/>
