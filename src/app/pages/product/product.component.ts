@@ -1,51 +1,12 @@
-import { Component, DoCheck, signal } from '@angular/core';
-import ProductGallery from './productsGallery.component';
-import RateStars from '../../components/shared/UI/starRate.component';
-import PriceUI from '../../components/shared/UI/price.component';
-import ColorPickerItem from '../../components/shared/UI/colorPickerItem.component';
-import Choices from './choices.component';
-import { Color, Option, Size } from '../../../typs/choices';
-import SizePicker from '../../components/shared/UI/sizePicker.component';
-import { DividerModule } from 'primeng/divider';
-import Counter from '../../components/shared/UI/counter.component';
-import ProductTabs from './taps.component';
+import { Component } from '@angular/core';
+import ProductTabs from './comps/taps/taps.component';
+import { ProductHeroSecComponent } from './comps/heroSec.component';
 
 @Component({
   selector: 'app-product',
-  imports: [
-    ProductGallery,
-    Choices,
-    RateStars,
-    PriceUI,
-    ColorPickerItem,
-    SizePicker,
-    Counter,
-    DividerModule,
-    ProductTabs,
-  ],
+  imports: [ProductHeroSecComponent, ProductTabs],
 
   templateUrl: './product.component.html',
   styleUrl: './product.component.css',
 })
-export class ProductComponent {
-  colors: Option[] = [
-    { value: 1, label: '#FF5733' }, // Vibrant red-orange
-    { value: 2, label: '#33C1FF' }, // Sky blue
-    { value: 3, label: '#28A745' }, // Green
-    { value: 4, label: '#FFC107' }, // Amber
-  ];
-  sizes: Option[] = [
-    { label: 'Small', value: 'S' },
-    { label: 'Medium', value: 'M' },
-    { label: 'Large', value: 'L' },
-    { label: 'Extra Large', value: 'XL' },
-  ];
-  selectedColor = signal<Option | null>(null);
-  colorClicked(color: Option) {
-    this.selectedColor.set(color);
-  }
-  selectedSize = signal<Option | null>(null);
-  sizeClicked(size: Option) {
-    this.selectedSize.set(size);
-  }
-}
+export class ProductComponent {}

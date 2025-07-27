@@ -3,4 +3,5 @@ export default interface ReviewI {
   rate: number;
   message: string;
   id: number;
+  date?: string;
 }
