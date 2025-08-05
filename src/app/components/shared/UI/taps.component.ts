@@ -5,6 +5,7 @@ import {
   signal,
   OnChanges,
   SimpleChanges,
+  DoCheck,
 } from '@angular/core';
 import { Option } from '../../../../typs/choices';
 import { CnPipe } from '../../../uitls/pips/cn.pipe';
@@ -39,7 +40,8 @@ import { CnPipe } from '../../../uitls/pips/cn.pipe';
   </div>`,
   imports: [CnPipe],
 })
-export default class Taps implements OnChanges {
+export default class Taps implements OnChanges, DoCheck {
+  ngDoCheck(): void {}
   ngOnChanges(changes: SimpleChanges): void {
     this.activeTap.set(this.defaultActiveTap());
   }

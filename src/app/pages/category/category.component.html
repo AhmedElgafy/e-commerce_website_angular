@@ -1,0 +1,45 @@
+<section class="flex gap-[20px] justify-center">
+  <div
+    class="border-[.5px] max-md:hidden border-black/20 w-[295px] p-[20px] h-fit rounded-[20px]"
+  >
+    <app-filter />
+  </div>
+  <div
+    id="outClick"
+    (click)="clickOut($event)"
+    [class]="
+      [
+        'fixed w-full h-full opacity-100 translate-y-0 transition-transform ease-in-out bg-black/20 z-[1000] top-0 ',
+        !showFilter() && 'opacity-0 translate-y-[100%]'
+      ] | cn
+    "
+  >
+    <div
+      tabindex="1"
+      style="scrollbar-width: none"
+      [class]="
+        [
+          'bg-white  bottom-0 translate-y-[100%] max-h-[80vh]  w-full overflow-scroll  p-[20px]  absolute  transition-transform duration-500  rounded-[20px_20px_0px_0px] ',
+          showFilter() && 'translate-0'
+        ] | cn
+      "
+    >
+      <app-filter />
+    </div>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 w-fit gap-[20px]">
+    <div class="col-span-2 md:col-span-3 flex items-center justify-between">
+      <h1 class="text-[32px] font-semibold">Casual</h1>
+      <div (click)="setShowFilter(true)">
+        <app-svg-icon
+          icon="filter"
+          class="md:hidden cursor-pointer hover:fill-black/20"
+          [size]="24"
+        />
+      </div>
+    </div>
+    @for (product of products; track $index) {
+    <product-card [product]="product" />
+    }
+  </div>
+</section>

@@ -16,9 +16,16 @@ import ReviewTap from './reviews.component';
     @if (activeTap()==2) {
     <app-reviews-tap />
     }
+    <button
+      class="capitalize hover:bg-black cursor-pointer hover:text-white rounded-[62px] border-[.5px] p-[15px_45px] mt-[35px] block mx-auto "
+    >
+      load more reviews
+    </button>
   </section>`,
 })
-export default class ProductTabs {
+export default class ProductTabs implements DoCheck {
+  ngDoCheck(): void {
+  }
   curTap = signal<number>(0);
   setCurTap(n: number) {
     this.curTap.set(n);
@@ -28,7 +35,7 @@ export default class ProductTabs {
     { label: 'Rating & Reviews', value: 2 },
     { label: 'FAQs', value: 3 },
   ];
-  activeTap = signal<number>(1);
+  activeTap = signal<number>(2);
   onActiveChange(n: number) {
     this.activeTap.set(n);
   }

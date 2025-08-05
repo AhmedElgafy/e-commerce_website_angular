@@ -9,7 +9,6 @@ export default class SelectItem {
   selectedOption = output<Option>();
 
   optionClicked() {
-    console.log('clicked');
     this.selectedOption.emit(this.option());
   }
 }

@@ -32,14 +32,13 @@ import { DatePipe } from '@angular/common';
         </button>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-[20px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
       @for (item of reviews; track $index) {
       <div class="border-[.5px] border-black/20 rounded-[20px] p-[28px_32px]">
-        <div
-          class="flex mb-[15px] items-center justify-between cursor-pointer "
-        >
+        <div class="flex mb-[15px] items-center justify-between">
           <rate-stars [rate]="item.rate" />
-          <app-svg-icon icon="dots" [size]="20" />
+
+          <app-svg-icon class=" cursor-pointer " icon="dots" [size]="20" />
         </div>
         <div class="mb-[12px] flex items-center gap-[5px]">
           <h1 class="text-[20px] font-semibold">{{ item.name }}</h1>
